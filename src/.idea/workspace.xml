@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="55621812-52bb-4364-9597-fa984d1bbd0e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../libft/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_atoi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_bzero.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_delnode.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_get_next_line.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_isalnum.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_isalpha.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_isascii.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_isdigit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_islower.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_isprint.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_isspace.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_isupper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_itoa.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_lstadd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_lstdel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_lstdelone.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_lstiter.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_lstlen.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_lstmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_lstnew.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memalloc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memccpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memcmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memcpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memdel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memmove.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_memset.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putchar.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putchar_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putendl.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putendl_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putnbr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putnbr_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putstr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_putstr_fd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strcat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strclr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strcmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strcpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strdel.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strdup.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strequ.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_striter.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_striteri.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strjoin.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strlcat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strlen.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strmapi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strncat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strncmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strncpy.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strnequ.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strnew.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strnlen.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strnstr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strrchr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strsplit.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strstr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strsub.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_strtrim.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_tolower.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/ft_toupper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../libft/libft.h" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VZMBOblrQREirSUTZQbpZQiOXO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55621812-52bb-4364-9597-fa984d1bbd0e" name="Default Changelist" comment="" />
+      <created>1577456031677</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577456031677</updated>
+      <workItem from="1577456042357" duration="273000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
