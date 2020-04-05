@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_delnode.c                                       :+:      :+:    :+:   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 15:16:57 by ksemele           #+#    #+#             */
-/*   Updated: 2019/10/19 15:55:50 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/19 17:30:14 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/19 17:37:39 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_delnode(void *content, size_t content_size)
+void	ft_list_clear(t_list **begin_list)
 {
-	if (content_size > 0)
-		free(content);
+	t_list	*tmp;
+
+	if (!begin_list)
+		return ;
+	while (*begin_list)
+	{
+		free((*begin_list)->content);
+		tmp = (*begin_list)->next;
+		free(*begin_list);
+		*begin_list = tmp;
+	}
 }

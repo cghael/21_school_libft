@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen.c                                       :+:      :+:    :+:   */
+/*   ft_lstaddend.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 17:35:59 by ksemele           #+#    #+#             */
-/*   Updated: 2019/09/14 21:16:37 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/19 14:23:51 by cghael            #+#    #+#             */
+/*   Updated: 2019/10/06 19:48:26 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strnlen(const char *s, size_t maxlen)
+void	ft_lstaddend(t_list **list, t_list *new)
 {
-	size_t i;
+	t_list	*tmp;
 
-	i = 0;
-	if (ft_strlen(s) < maxlen)
-		return (ft_strlen(s));
+	tmp = *list;
+	if (!list || !new)
+		return ;
+	if (!tmp)
+		*list = new;
 	else
 	{
-		while (i <= maxlen)
-		{
-			if (s[i] == '\0')
-				break ;
-			i++;
-		}
-		return (i - 1);
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
 }

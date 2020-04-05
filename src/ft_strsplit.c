@@ -3,91 +3,82 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 18:49:38 by ksemele           #+#    #+#             */
-/*   Updated: 2019/09/16 16:11:45 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/16 17:07:04 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/19 17:48:29 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_start(char const *s, int pos, char del)
+static void	*ft_memfree(char *str, char **strsl, size_t i)
 {
-	while (s[pos] && s[pos] == del)
-		pos++;
-	return (pos);
-}
+	size_t	j;
 
-static int	ft_len(char const *s, int start, char del)
-{
-	int len;
-
-	len = 1;
-	while (s[start + len] && s[start + len] != del)
-		len++;
-	return (len);
-}
-
-static int	ft_count(char const *s, char del)
-{
-	int count;
-	int i;
-
-	i = 0;
-	count = 0;
-	while (s[i])
+	j = 0;
+	free(str);
+	while (j < i)
 	{
-		if (s[i] == '\0')
-			break ;
-		i = ft_start(s, i, del);
-		if (s[i] == '\0')
-			break ;
-		i += ft_len(s, i, del);
-		count++;
+		free(strsl[j]);
+		j++;
 	}
-	return (count);
-}
-
-static char	**ft_free_elem(char ***word, int size)
-{
-	int i;
-
-	i = 0;
-	while (i < size)
-	{
-		free(*word[i]);
-		i++;
-	}
-	free(*word);
+	free(strsl);
 	return (NULL);
+}
+
+static char	*ft_strcreate(char *str, size_t s_end, size_t s_begin)
+{
+	size_t	len;
+	char	*n_str;
+
+	len = s_end - s_begin;
+	if (!(n_str = (char*)malloc(sizeof(*n_str) * (len + 1))))
+		return (NULL);
+	n_str = ft_strncpy(n_str, str + s_begin, len);
+	n_str[len] = '\0';
+	return (n_str);
+}
+
+static char	**ft_words(char **strsl, char *str, size_t n_words, char c)
+{
+	size_t	i;
+	size_t	j;
+	size_t	k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (i < n_words && n_words != 0)
+	{
+		if (str[j] == c || str[j] == '\0')
+		{
+			if (!(strsl[i] = ft_strcreate(str, j, k)))
+				return (ft_memfree(str, strsl, i));
+			i++;
+			k = j + 1;
+		}
+		j++;
+	}
+	strsl[i] = NULL;
+	return (strsl);
 }
 
 char		**ft_strsplit(char const *s, char c)
 {
-	int		count;
-	char	**word;
-	int		i;
-	int		pos;
+	char	*str;
+	char	**strsl;
+	size_t	n_words;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	count = ft_count(s, c);
-	word = (char**)malloc((count + 1) * sizeof(char**));
-	if (word == NULL)
+	if ((str = ft_strsepcut(s, c)) == NULL)
 		return (NULL);
-	word[count] = NULL;
-	pos = 0;
-	i = -1;
-	while (++i < count)
+	n_words = ft_word_count(str, c);
+	if (!(strsl = (char**)malloc(sizeof(char*) * (n_words + 1))))
 	{
-		pos = ft_start(s, pos, c);
-		if (s[pos] == '\0')
-			break ;
-		word[i] = ft_strsub(s, pos, ft_len(s, pos, c));
-		if (word[i] == NULL)
-			return (ft_free_elem(&word, count));
-		pos += ft_len(s, pos, c);
+		free(str);
+		return (NULL);
 	}
-	return (word);
+	return (ft_words(strsl, str, n_words, c));
 }

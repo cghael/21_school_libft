@@ -3,24 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 13:18:38 by ksemele           #+#    #+#             */
-/*   Updated: 2019/09/14 21:09:54 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/10 15:48:25 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/17 17:06:20 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** DESCRIPTION
-** ft_strcat() append a copy of the null-terminated string s2 to the end of the
-** null-terminated string s1, then add a terminating `\0'.
-** The string s1 must have sufficient space to hold the result.
-*/
-
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strcat(char *dest, const char *app)
 {
-	ft_strcpy(s1 + ft_strlen(s1), s2);
-	return (s1);
+	size_t	i;
+	size_t	j;
+
+	j = 0;
+	i = ft_strlen(dest);
+	while (app[j])
+	{
+		dest[i] = app[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

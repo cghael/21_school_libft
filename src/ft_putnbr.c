@@ -3,41 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 11:02:41 by ksemele           #+#    #+#             */
-/*   Updated: 2019/09/09 12:40:31 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/07 17:34:24 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/07 18:47:42 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** Outputs the integer n to the standard output.
-** Param. #1: The integer to output.
-** Return value: None.
-*/
 
 #include "libft.h"
 
 void	ft_putnbr(int n)
 {
-	unsigned int	res;
+	unsigned int nb;
 
-	res = n;
+	nb = n;
 	if (n < 0)
-		res = -res;
-	if (res / 10 == 0)
 	{
-		if (n < 0)
-		{
-			ft_putchar('-');
-			ft_putchar((res) + '0');
-		}
-		else
-			ft_putchar((res) + '0');
+		ft_putchar('-');
+		nb = -nb;
 	}
+	if (nb <= 9)
+		ft_putchar('0' + nb);
 	else
 	{
-		ft_putnbr(n / 10);
-		ft_putchar((res % 10) + '0');
+		ft_putnbr(nb / 10);
+		ft_putchar('0' + nb % 10);
 	}
 }

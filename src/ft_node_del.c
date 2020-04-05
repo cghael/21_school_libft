@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dollar_arg.c                                    :+:      :+:    :+:   */
+/*   ft_node_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/21 17:36:51 by cghael            #+#    #+#             */
-/*   Updated: 2020/01/21 17:36:53 by cghael           ###   ########.fr       */
+/*   Created: 2019/10/06 13:53:59 by cghael            #+#    #+#             */
+/*   Updated: 2019/10/08 19:06:22 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void		*ft_dollar_arg(int n, t_arg *ap_t)
+void	*ft_node_del(t_list **begin_list, t_list *node, void *n)
 {
-	int		i;
-	void	*val;
+	t_list	*tmp;
 
-	i = 1;
-	val = 0;
-	if (n > 0)
-		while (i <= n)
-		{
-			val = va_arg(ap_t->d_arg, void*);
-			i++;
-		}
+	if (!*begin_list || !node)
+		return (n);
+	tmp = *begin_list;
+	if (tmp == node)
+		*begin_list = node->next;
 	else
-		val = va_arg(ap_t->n_arg, void*);
-	return (val);
+	{
+		while (tmp->next != node)
+			tmp = tmp->next;
+		tmp->next = node->next;
+	}
+	if (node->content)
+		free(node->content);
+	node->next = NULL;
+	free(node);
+	node = NULL;
+	return (n);
 }

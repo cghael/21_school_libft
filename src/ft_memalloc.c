@@ -3,29 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 17:03:09 by ksemele           #+#    #+#             */
-/*   Updated: 2019/10/25 17:08:54 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/15 13:17:01 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/15 13:33:54 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** Non-standard function allocates memory using malloc(3) and initliazes all
-** bytes to 0.  Returns a pointer to the first byte, or NULL if malloc failed.
-** Parameter size_t size indicates how much memory to allocate.
-*/
 
 #include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {
-	void *new;
+	size_t	i;
+	char	*mem;
 
-	new = (void *)malloc(sizeof(*new) * size);
-	if (new == NULL)
-		return (NULL);
-	else
-		ft_bzero(new, size);
-	return (new);
+	mem = (char*)malloc(sizeof(*mem) * size);
+	if (!mem)
+		return (0);
+	i = 0;
+	while (i < size)
+		mem[i++] = '\0';
+	return (mem);
 }

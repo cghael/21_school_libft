@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_specials.c                                  :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 17:07:47 by cghael            #+#    #+#             */
-/*   Updated: 2020/01/23 17:07:49 by cghael           ###   ########.fr       */
+/*   Created: 2019/09/19 16:43:18 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/19 17:38:24 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-void		ft_add_specials(char *res, t_ftptf tmp_t)
+size_t	ft_list_size(t_list *begin_list)
 {
-	char	*ptr;
+	size_t	counter;
+	t_list	*tmp;
 
-	if (tmp_t.spec == 'x' || tmp_t.spec == 'X')
-	{
-		if (tmp_t.octo && !tmp_t.arg_zero)
-		{
-			ptr = ft_strchr(res, '0') + 1;
-			*ptr = tmp_t.spec;
-		}
-	}
+	if (!begin_list)
+		return (0);
 	else
 	{
-		if (tmp_t.octo)
+		tmp = begin_list;
+		counter = 1;
+		while (begin_list->next)
 		{
-			ptr = ft_strchr(res, '0') + 1;
-			*ptr = 'x';
+			begin_list = begin_list->next;
+			counter++;
 		}
 	}
+	return (counter);
 }

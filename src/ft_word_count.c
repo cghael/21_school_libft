@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_digit.c                                    :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/07 12:45:52 by ksemele           #+#    #+#             */
-/*   Updated: 2020/01/07 12:45:53 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/19 17:40:48 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/19 17:48:32 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-/*
-** Function moving (*p)ointer, while (**p) is a digit
-*/
-
-int		ft_find_digit(char **p)
+size_t	ft_word_count(char const *s, char c)
 {
-	while (**p && **p != '\0')
+	size_t	i;
+	size_t	w_count;
+
+	if (!s)
+		return (0);
+	i = 0;
+	w_count = 0;
+	while (s[i])
 	{
-		if (ft_isdigit(**p))
-			(*p)++;
-		else
-			return (1);
+		while (s[i] != c && s[i])
+			i++;
+		w_count++;
+		i++;
 	}
-	return (-1);
+	return (w_count);
 }

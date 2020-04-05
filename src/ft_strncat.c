@@ -3,32 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/09 12:43:00 by ksemele           #+#    #+#             */
-/*   Updated: 2019/09/14 21:12:56 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/10 15:58:32 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/17 16:58:27 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** DESCRIPTION
-** The ft_strncat() is recoded <string.h> strncat() function appends not more
-** than n characters from s2, and then adds a terminating `\0'.
-** The source and destination strings should not overlap,
-** as the behavior is undefined.
-*/
-
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	*ft_strncat(char *dest, const char *app, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	j = 0;
-	i = ft_strlen(s1);
-	while (s2[j] && j < n)
-		s1[i++] = s2[j++];
-	s1[i] = '\0';
-	return (s1);
+	i = ft_strlen(dest);
+	while (app[j] && n--)
+	{
+		dest[i] = app[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

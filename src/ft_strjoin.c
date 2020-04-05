@@ -3,32 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 15:47:17 by ksemele           #+#    #+#             */
-/*   Updated: 2019/10/25 16:24:41 by ksemele          ###   ########.fr       */
+/*   Created: 2019/10/01 16:36:14 by cghael            #+#    #+#             */
+/*   Updated: 2019/10/01 18:05:01 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** Function create new char *res sizeof (s1 + s2) (if cant - return NULL)
-** Then they copy s1 to res & adds s2 to res too.
-** Return: pointer to res
-*/
 
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *res;
+	char		*new;
+	size_t		len;
+	size_t		i;
+	size_t		n;
+	size_t		m;
 
 	if (!s1 || !s2)
 		return (NULL);
-	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
-	if (res == NULL)
+	len = (ft_strlen(s1) + ft_strlen(s2));
+	i = 0;
+	n = 0;
+	m = 0;
+	new = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new)
 		return (NULL);
-	else
-		ft_strcpy(res, s1);
-	ft_strcat(res, s2);
-	return (res);
+	if (len > i)
+	{
+		while (s1[n] != '\0')
+			new[i++] = s1[n++];
+		while (s2[m] != '\0')
+			new[i++] = s2[m++];
+	}
+	if (i == len)
+		new[i] = '\0';
+	return (new);
 }

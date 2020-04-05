@@ -3,37 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ksemele <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: cghael <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/15 03:33:55 by ksemele           #+#    #+#             */
-/*   Updated: 2019/09/15 03:33:56 by ksemele          ###   ########.fr       */
+/*   Created: 2019/09/16 15:54:43 by cghael            #+#    #+#             */
+/*   Updated: 2019/09/17 16:18:12 by cghael           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Coding of the non-standard funciton itoa().
-** Parameters: an integer
-** Side effect: allocates memory and puts a string representing the integer
-** argument in it
-** Return value: a string version of the integer passed, or NULL if the memory
-** allocation failed
-*/
-
 #include "libft.h"
 
-int		ft_size(long int n)
+static int	ft_memsize(int n)
 {
-	int		size;
+	size_t	size;
 
-	if (!n)
-		return (1);
-	size = 0;
+	size = 1;
 	if (n < 0)
-	{
-		n = -n;
 		size++;
-	}
-	while (n != 0)
+	while (n)
 	{
 		n = n / 10;
 		size++;
@@ -41,29 +27,42 @@ int		ft_size(long int n)
 	return (size);
 }
 
-char	*ft_itoa(int nb)
+static char	*ft_fillnum(char *str, int n, size_t size)
 {
-	char		*res;
-	int			i;
-	long int	n;
+	unsigned int	nb;
 
-	n = nb;
-	i = ft_size(n);
-	res = (char*)ft_memalloc(i + 1);
-	if (!res)
-		return (NULL);
-	res[i--] = '\0';
-	if (n == 0)
-		res[0] = '0';
+	nb = n;
 	if (n < 0)
 	{
-		res[0] = '-';
-		n = -n;
+		str[0] = '-';
+		nb = -nb;
 	}
-	while (n > 0)
+	while (nb)
 	{
-		res[i--] = '0' + (n % 10);
-		n = n / 10;
+		str[size - 2] = '0' + (nb % 10);
+		nb = nb / 10;
+		size--;
 	}
-	return (res);
+	return (str);
+}
+
+char		*ft_itoa(int n)
+{
+	char	*str;
+	size_t	size;
+
+	if (n == 0)
+	{
+		str = ft_memalloc(2);
+		if (!str)
+			return (NULL);
+		str[0] = '0';
+		return (str);
+	}
+	size = ft_memsize(n);
+	str = ft_memalloc(size);
+	if (!str)
+		return (NULL);
+	str = ft_fillnum(str, n, size);
+	return (str);
 }
