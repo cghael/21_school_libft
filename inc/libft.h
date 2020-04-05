@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# define MAX_LINT 9223372036854775807
+
 typedef struct		s_list
 {
 	void			*content;

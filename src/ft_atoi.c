@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-#define MAX_LINT 9223372036854775807
-
 static char		*ft_skip(const char *str)
 {
 	char *tmp;
