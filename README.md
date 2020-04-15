@@ -1,4 +1,4 @@
-# 21school_libft
+# 21_school_libft
 The aim of this project is to code a C library regrouping usual functions that I’ll be allowed to use in all other school projects.
 
 The libft project builds on the concepts we learned during the bootcamp.
