@@ -32,7 +32,7 @@ int				ft_atoi(const char *str)
 	tmp = ft_skip(str);
 	minus = (*tmp == '-') ? -1 : 1;
 	tmp += (*tmp == '-' || *tmp == '+') ? 1 : 0;
-	if (*tmp < 48 && *tmp > 57)
+	if (*tmp < 48 || *tmp > 57)
 		return (0);
 	res = 0;
 	while (*tmp >= 48 && *tmp <= 57)
