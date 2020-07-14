@@ -20,8 +20,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t		n;
 	size_t		m;
 
-	if (!s1 || !s2)
-		return (NULL);
+	if (!s1)
+		s1 = "\0";
+	if (!s2)
+		s2 = "\0";
 	len = (ft_strlen(s1) + ft_strlen(s2));
 	i = 0;
 	n = 0;
