@@ -26,8 +26,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len = (ft_strlen(s1) + ft_strlen(s2));
 	i = 0;
 	n = 0;
-	new = (char *)malloc(sizeof(char) * (len + 1));
-	if (!new)
+	if (!(new = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	if (len > i)
 	{
