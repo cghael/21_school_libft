@@ -88,7 +88,8 @@ SOURCES_LIST = \
 	ft_word_count.c\
 	ft_free_tdarr.c\
 	ft_node_del.c\
-	ft_get_next_line.c
+	ft_get_next_line.c \
+	ft_free_two_dem_arr.c
 SOURCES_DIRECTORY = ./src/
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 

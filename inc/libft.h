@@ -104,5 +104,6 @@ void				ft_list_clear(t_list **begin_list);
 size_t				ft_word_count(char const *s, char c);
 void				ft_free_tdarr(char **str);
 void				*ft_node_del(t_list **begin_list, t_list *node, void *n);
+void				ft_free_two_dem_str(char **str);
 
 #endif

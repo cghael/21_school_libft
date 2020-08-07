@@ -71,7 +71,7 @@ set(SOURCE_LIB
         src/ft_strtrim.c
         src/ft_tolower.c
         src/ft_toupper.c
-        src/ft_word_count.c)
+        src/ft_word_count.c src/ft_free_two_dem_arr.c)
 
 include_directories(inc)
 
