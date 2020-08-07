@@ -19,13 +19,14 @@ size_t	ft_word_count(char const *s, char c)
 
 	if (!s)
 		return (0);
-	i = 0;
+	i = 1;
 	w_count = 0;
+	if (s[0] && s[0] != c)
+		w_count++;
 	while (s[i])
 	{
-		while (s[i] != c && s[i])
-			i++;
-		w_count++;
+		if (s[i] != c && (s[i - 1] == c))
+			w_count++;
 		i++;
 	}
 	return (w_count);

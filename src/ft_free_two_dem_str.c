@@ -18,11 +18,14 @@ void		ft_free_two_dem_str(char **str)
 	unsigned int	j;
 
 	i = 0;
-	while (str[i])
+	if (str)
 	{
-		j = i;
-		free(str[j]);
-		i++;
+		while (str[i])
+		{
+			j = i;
+			free(str[j]);
+			i++;
+		}
 	}
 	free(str);
 }
