@@ -15,17 +15,15 @@
 void		ft_free_two_dem_str(char **str)
 {
 	unsigned int	i;
-	unsigned int	j;
 
 	i = 0;
 	if (str)
 	{
 		while (str[i])
 		{
-			j = i;
-			free(str[j]);
+			free(str[i]);
 			i++;
 		}
+		free(str);
 	}
-	free(str);
 }

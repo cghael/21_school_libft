@@ -55,7 +55,7 @@ char		*ft_strsepcut(char const *s, char c)
 			j++;
 		i++;
 	}
-	if (!(str = ft_memalloc(j + 1)))
+	if (!(str = ft_strnew(j + 1)))
 		return (NULL);
 	str = ft_strcpy_mod(str, s, c, j);
 	return (str);

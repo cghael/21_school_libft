@@ -61,6 +61,7 @@ static char	**ft_words(char **strsl, char *str, size_t n_words, char c)
 		j++;
 	}
 	strsl[i] = NULL;
+	free(str);
 	return (strsl);
 }
 
