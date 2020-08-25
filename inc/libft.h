@@ -18,6 +18,8 @@
 # include <stdlib.h>
 
 # define MAX_LINT 9223372036854775807
+# define TRUE 1
+# define FALSE 0
 
 typedef struct		s_list
 {
