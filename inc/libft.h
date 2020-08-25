@@ -108,4 +108,6 @@ void				ft_free_tdarr(char **str);
 void				*ft_node_del(t_list **begin_list, t_list *node, void *n);
 void				ft_free_two_dem_str(char **str);
 
+int					ft_str_is_int(char *str);
+
 #endif
