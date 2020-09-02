@@ -115,8 +115,9 @@ static int		ft_put_line(char **line, t_list **st_list, \
 			return (-1);
 		return ((int)ft_node_del(st_list, fd_node, (void*)1));
 	}
-	if (!(*line = ft_strnew(0)))
-		return (-1);
+//	if (!(*line = ft_strnew(0)))
+//		return (-1);
+	*line = NULL;
 	return ((int)ft_node_del(st_list, fd_node, (void*)0));
 }
 
