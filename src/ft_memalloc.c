@@ -19,7 +19,7 @@ void	*ft_memalloc(size_t size)
 
 	mem = (char*)malloc(sizeof(*mem) * size);
 	if (!mem)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (i < size)
 		mem[i++] = '\0';
